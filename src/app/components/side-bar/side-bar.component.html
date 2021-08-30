@@ -1,0 +1,12 @@
+<figure class="logo">
+    <img src="../assets/images/RickyAndMorty.jpg">
+</figure>
+<nav>
+    <ul class="personajes">
+        <li routerLinkActive="active" *ngFor="let character of arrCharacters;" [routerLink]="['/character/', character?.id]">{{character?.name}}</li>
+    </ul>
+    <div class="botones">
+        <div (click)="prevPage()" *ngIf="prev">PREV</div>
+        <div (click)="nextPage()" *ngIf="next">NEXT</div>
+    </div>
+</nav>
