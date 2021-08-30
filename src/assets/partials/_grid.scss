@@ -1,0 +1,53 @@
+@use "sass:math";
+// Sistema de columnas
+
+@mixin column($posicion) {
+        $columnWidth: 100% / 12 * $posicion;
+        width: calc( #{$columnWidth} - #{$marginGrid * 2});
+}
+
+// solo para probarlo
+// .caja{
+//     background-color: seagreen;
+//     height: 60px;
+// }
+
+.grid{
+    display: flex;
+    // permite elegir el ancho que nosotros queramos
+    flex-wrap: wrap;
+}
+
+// todos los elementos que empiecen por col
+[class*="col-"]{
+    margin: $marginGrid;
+}
+
+// movil
+@for $i from 1 through 12
+{
+    .col-#{$i}{
+        @include column($i);
+    }
+}
+
+// tablet
+@media(min-width: $breakpointTablet){
+    @for $i from 1 through 12
+    {
+        .col-t-#{$i}{
+            @include column($i);
+        }
+    }
+}
+
+//desktop
+@media(min-width: $breakpointDesktop){
+    @for $i from 1 through 12
+    {
+        // table
+        .col-d-#{$i}{
+            @include column($i);
+        }
+    }
+}
