@@ -35,6 +35,11 @@
                 color: $blackColor;
             }
         }
+        .active{
+            background-color: $yellowColor;
+            color: $blackColor;
+
+        }
     }
     aside .grid{
         article{
@@ -50,12 +55,12 @@
         }
     }
     .muerto{
-        color: red;
+        color: #EA5021;
     }
     .vivo{
-        color: green;
+        color: $yellowColor;
     }
     .desconocido{
-        color: rgb(211, 211, 35);
+        color: #E0DA5F;
     }
 }
