@@ -11,8 +11,8 @@ export class CharactersService {
 
   constructor( private httpClient: HttpClient ) { }
 
-  getByPage() : Promise<any>{
-    return this.httpClient.get<any>(this.urlBase).toPromise();
+  getByPage(url:string = this.urlBase) : Promise<any>{
+    return this.httpClient.get<any>(url).toPromise();
   }
 
   getById(idCharacter: number) : Promise<Character>{
